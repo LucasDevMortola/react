@@ -6,7 +6,6 @@ import lista from '../../data/people';
 
 export default function Home() {
     document.title = "Página inicial";
-
     return (
         <div>
             <Titulo titulo="Página Home" />

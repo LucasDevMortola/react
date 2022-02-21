@@ -1,14 +1,19 @@
-import './style.css';
+import './style.js'
+import { CardWorker } from './style'
+import { CardWorkerImg } from './style'
+import { Container } from './style.js';
+import {CardSalario} from './style' 
 
-export default function Card() {
+export default function Card(props) {
+    const salario = props.pessoa.salario
     return (
-        <div class="card">
-            <img src="http://roger.dev.br/img/avatar.3070f3de.jpg" alt="Avatar" width={100} />
-            <div class="container">
-                <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p>
-                <h4>Salário: R$ 1000,00</h4>
-            </div>
-        </div>
+        <CardWorker className="card">
+            <CardWorkerImg src={props.pessoa.imagem} alt="Avatar" width={100} />
+            <Container className="container">
+                <h1><b>{props.pessoa.nome}</b></h1>
+                <p>{props.pessoa.cargo}</p>
+                <CardSalario salario={props.pessoa.salario}>{props.pessoa.salario}</CardSalario>
+            </Container>
+        </CardWorker>
     );
 }
